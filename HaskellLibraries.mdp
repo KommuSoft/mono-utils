@@ -1,0 +1,33 @@
+<Project name="HaskellLibraries" fileversion="2.0" DefaultNamespace="HaskellLibraries" language="C#" targetFramework="4.0" ctype="DotNetProject">
+  <Policies>
+    <StandardHeader inheritsSet="GPLv3License" />
+  </Policies>
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Debug" assembly="HaskellLibraries" signAssembly="True" assemblyKeyFile="/home/willem/Projects/my.key" />
+      <Build debugmode="True" target="Library" />
+      <Execution consolepause="False" runwithwarnings="True" runtime="MsNet" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" definesymbols="DEBUG" generatexmldocumentation="True" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Release" assembly="HaskellLibraries" signAssembly="True" assemblyKeyFile="/home/willem/Projects/my.key" />
+      <Build debugmode="False" target="Library" />
+      <Execution consolepause="False" runwithwarnings="True" runtime="MsNet" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="False" generatexmldocumentation="True" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <Contents>
+    <File subtype="Code" buildaction="Compile" name="DataList.cs" />
+    <File subtype="Code" buildaction="Compile" name="AssemblyInfo.cs" />
+    <File subtype="Code" buildaction="Compile" name="Utils.cs" />
+    <File subtype="Code" buildaction="Compile" name="Maybe.cs" />
+    <File subtype="Code" buildaction="Compile" name="EqualityFunction.cs" />
+    <File subtype="Code" buildaction="Compile" name="Ordering.cs" />
+    <File subtype="Code" buildaction="Compile" name="OrderingFunction.cs" />
+  </Contents>
+  <References>
+    <ProjectReference type="Gac" localcopy="True" refto="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference type="Gac" localcopy="True" refto="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference specificVersion="False" type="Assembly" localcopy="True" refto="lib/FSharp.PowerPack.dll" />
+  </References>
+</Project>
