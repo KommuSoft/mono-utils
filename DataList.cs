@@ -1117,11 +1117,13 @@ namespace KommuSoft.HaskellLibraries {
 		/// </returns>
 		public static IEnumerable<T> DropWhile<T> (this IEnumerable<T> xs, Predicate<T> p) {
 			IEnumerator<T> ie = xs.GetEnumerator ();
-			while (ie.MoveNext () && p (ie.Current))
-				;
-			do {
+			bool nxt = ie.MoveNext ();
+			while (nxt && p (ie.Current))
+				nxt = ie.MoveNext ();
+			while (nxt) {
 				yield return ie.Current;
-			} while(ie.MoveNext ());
+				nxt = ie.MoveNext ();
+			}
 		}
 
 		/// <summary>
@@ -2995,7 +2997,7 @@ namespace KommuSoft.HaskellLibraries {
 		}
 
 		/// <summary>
-		/// The overloaded version of <see cref="DataList.Take"/>, which accepts a <see cref="IIntegral"/> value as the number
+		/// The overloaded version of <see cref="DataList.Take"/>, which accepts a <see cref="IIntegral{I}"/> value as the number
 		/// of elements to take.
 		/// </summary>
 		/// <param name="xs">
@@ -3016,7 +3018,7 @@ namespace KommuSoft.HaskellLibraries {
 		}
 
 		/// <summary>
-		/// The overloaded version of <see cref="DataList.Drop"/>, which accepts a <see cref="IIntegral"/> value as the number
+		/// The overloaded version of <see cref="DataList.Drop"/>, which accepts a <see cref="IIntegral{I}"/> value as the number
 		/// of elements to take.
 		/// </summary>
 		/// <param name="xs">
@@ -3039,7 +3041,7 @@ namespace KommuSoft.HaskellLibraries {
 		}
 
 		/// <summary>
-		/// The overloaded version of <see cref="DataList.SplitAt"/>, which accepts any <see cref="IIntegral"/> value as the position
+		/// The overloaded version of <see cref="DataList.SplitAt"/>, which accepts any <see cref="IIntegral{I}"/> value as the position
 		/// at which to split.
 		/// </summary>
 		/// <param name="xs">
@@ -3056,7 +3058,7 @@ namespace KommuSoft.HaskellLibraries {
 		}
 
 		/// <summary>
-		/// The overloaded version of <see cref="DataList.IndexOperator"/>. Which accepts any <see cref="IIntegral"/> value as the position at which to split.
+		/// The overloaded version of <see cref="DataList.IndexOperator"/>. Which accepts any <see cref="IIntegral{I}"/> value as the position at which to split.
 		/// </summary>
 		/// <param name="xs">
 		/// The given list of elements to extract the <paramref name="integer"/>-th element from.
@@ -3085,7 +3087,7 @@ namespace KommuSoft.HaskellLibraries {
 		}
 
 		/// <summary>
-		/// The overloaded version of <see cref="DataList.Replicate"/>, which accepts any <see cref="IIntegral"/> value as
+		/// The overloaded version of <see cref="DataList.Replicate"/>, which accepts any <see cref="IIntegral{I}"/> value as
 		/// the number of repititions to make.
 		/// </summary>
 		/// <param name="integer">

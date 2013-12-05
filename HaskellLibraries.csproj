@@ -9,8 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>HaskellLibraries</RootNamespace>
     <AssemblyName>HaskellLibraries</AssemblyName>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\..\..\..\willem\Projects\my.key</AssemblyOriginatorKeyFile>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +35,7 @@
     <Compile Include="EqualityFunction.cs" />
     <Compile Include="Ordering.cs" />
     <Compile Include="OrderingFunction.cs" />
+    <Compile Include="DataListTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,6 +43,7 @@
     <Reference Include="FSharp.PowerPack">
       <HintPath>lib\FSharp.PowerPack.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
