@@ -1,6 +1,0 @@
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/bin/Debug/FSharp.PowerPack.dll
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/bin/Debug/HaskellLibraries.dll.mdb
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/bin/Debug/HaskellLibraries.dll
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/obj/Debug/HaskellLibraries.dll
-/home/kommusoft/Projects/doctoraat/zincoxide/mono-utils/obj/Debug/HaskellLibraries.dll.mdb
